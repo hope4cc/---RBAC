@@ -1,0 +1,175 @@
+/*全局样式*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.mr-top-5{
+    margin-top: 5px;
+}
+.mr-top-20{
+    margin-top: 20px;
+}
+
+
+/* From uiverse.io by @alexruix */
+/*搜索框*/
+
+.inputSearch {
+    line-height: 28px;
+    border: 2px solid transparent;
+    border-bottom-color: #777;
+    padding: .2rem 0;
+    outline: none;
+    background-color: transparent;
+    color: #0d0c22;
+    transition: .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.inputSearch:focus {
+    outline: none;
+
+}
+.inputSearch:hover{
+    padding: .2rem 1rem;
+    border-radius: 1rem;
+    border-color: #b2c0d1;
+}
+
+.inputSearch::placeholder {
+    color: #777;
+}
+
+.inputSearch:focus::placeholder {
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+
+
+
+/*搜索按钮*/
+/* From uiverse.io by @xueyuantan */
+.button-search {
+    cursor: pointer;
+    color: #fff;
+    margin-right: 10px;
+    padding: 0.7em 1.7em;
+    font-size: 12px;
+    border-radius: 1em;
+    background: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    transition: all .3s;
+
+}
+
+.button-search:hover {
+    border: 1px solid white;
+}
+
+.button-search:active {
+    border: 1px solid white;
+}
+
+
+.button-io{
+    cursor: pointer;
+
+    margin-right: 10px;
+    padding: 0.7em 1.7em;
+    font-size: 12px;
+    border-radius: 1em;
+    background: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    transition: all .3s;
+}
+
+
+.input-login {
+    line-height: 30px;
+    /*border: 0.2px solid #b2c0d1;*/
+    /*padding: .2rem 1rem;*/
+    border-radius: 20px;
+    width: 360px;
+    outline: none;
+    background-color: transparent;
+    /*color: #0d0c22;*/
+    transition: .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+
+
+.button-login{
+    width: 330px;
+    margin: 25px 15px;
+    cursor: pointer;
+    padding: 0.7em 1.7em;
+    font-size: 16px;
+    border-radius: 1em;
+    border: 1px solid #e8e8e8;
+    transition: all .3s;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+
+    color: white;
+
+    background-color: #3a86f2
+}
+
+
+
+.login_card{
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    position:absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    botton: 0;
+    margin:200px auto;
+    webkit-transform:rotate(6deg);
+    width: 400px;
+    height: 500px;
+    padding: 20px;
+    border-radius: 25px
+}
+
+.button-others_login{
+    margin: 15px 85px;
+    cursor: pointer;
+    padding: 0.7em 1.7em;
+    font-size: 14px;
+    width: 80px;
+    height: 46px ;
+    color: white;
+    background-color: #3a86f2;
+    border-radius: 1em;
+    border: 1px solid #e8e8e8;
+    transition: all .3s;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.hr {
+    margin-top: 15px;
+    color: #000;
+    border: 0;
+    font-size: 16px;
+    padding: 10px 0;
+    position: relative;
+}
+.hr::before {
+    content: "第三登录";
+    position: absolute;
+    padding: 0 20px;
+    line-height: 1px;
+    border: solid #d0d4db;
+    border-width: 0 100vw;
+    white-space: nowrap;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.avatar-uploader{
+    text-align: center;
+    width: 60px;
+    height: 60px;
+}
