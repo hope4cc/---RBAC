@@ -8,18 +8,11 @@ import 'element-ui/lib/theme-chalk/index.css';
 //引入全局样式
 import './assets/global.css'
 import request from "@/utils/request";
-
-
-
 //响应式布局
 import 'element-ui/lib/theme-chalk/display.css';
-
-//按钮 io网的样式 2022/8/31
+//按钮 io网的样式
 import './assets/home.css'
-
 import './icon/iconfont'
-
-
 //封装axios
 Vue.prototype.request=request
 
