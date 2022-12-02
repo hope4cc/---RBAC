@@ -1,5 +1,7 @@
 ## 系统用户权限功能实战-数据库层面RBAC
 
+# 从数据库表设计层面设计权限功能
+
 ## 一、数据库设计
 
 ### 1、数据库表
@@ -385,4 +387,60 @@ vue 2、element ui
 
 
 
-## 四、shiro
+## 四、Shiro
+
+shiro主要概念：
+
+![aaa](https://img-blog.csdnimg.cn/8470829a0afd4f1395b1e089335a9105.png)
+
+**三个核心组件：**Subject, SecurityManager 和 Realms。
+**Subject：**即“当前操作用户”。但是，在Shiro中，Subject这一概念并不仅仅指用户（人），也可以是进程、后台帐户或其他类似事物。它仅仅意味着“当前跟软件交互的东西”。
+
+>Subject代表了当前用户的安全操作，SecurityManager则管理所有用户的安全操作。
+
+**SecurityManager：**它是Shiro框架的核心,Shiro通过SecurityManager来管理内部组件实例，并通过它来提供安全管理的各种服务。
+
+**Realm：**Realm充当了Shiro与应用安全数据间的“桥梁”或者“连接器”。也就是，当对用户执行认证（登录）和授权（访问控制）验证时，Shiro会从应用配置的Realm中查找用户及其权限信息。
+
+>Realm实质上是一个安全相关的DAO：封装了数据源的连接细节，并在需要时将相关数据提供给Shiro。当配置Shiro时，你必须至少指定一个Realm，用于认证和（或）授权。配置多个Realm是可以的，但是至少需要一个。
+
+**总结**
+
+Shiro最大的一个特点就是跟项目中的各个容器并没有强耦合到一块儿，就算你是最基础的Java se的程序，或者是对应各种框架其他语言程序都可以去使用啊，可以说它的兼容性更好一些，可以应对于各种各样的场景，比如登录认证还有权限控制啊，以及一些相对应的需求都能去应对，这也是它的一大特点。
+
+
+
+## 五、**SpringSecurity**
+
+**SpringSecurity主要概念：**
+
+![截屏2022-12-02 15.05.15](https://tva1.sinaimg.cn/large/008vxvgGly1h8phigpjnrj32d80u0q95.jpg)
+
+UsernamePasswordAuthenticationFilter:负责处理我们在登陆页面填写了用户名密码后的登陆请求。
+
+AuthenticationManager接口：定义了认证Authentication的方法
+
+Authentication接口: 它的实现类，表示当前访问系统的用户，封装了用户相关信息。
+
+UserDetailsService接口：加载用户特定数据的核心接口。里面定义了一个根据用户名查询用户信息的方法。
+
+>SpringSecurity的原理其实就是一个过滤器链，内部包含了提供各种功能的过滤器。
+
+![截屏2022-12-02 15.12.06](https://tva1.sinaimg.cn/large/008vxvgGly1h8phifd9czj32a60tgwhw.jpg)
+
+
+
+
+## 六、Shiro和SpringSecurity区别
+
+1、Spring Security 基于Spring 开发，项目若使用 Spring 作为基础，配合 Spring Security 做权限更加方便，而 Shiro 需要和 Spring 进行整合开发；
+
+2、Spring Security 功能比 Shiro 更加丰富些，例如安全维护方面；
+
+3、Spring Security 社区资源相对比 Shiro 更加丰富；
+
+4、Shiro 的配置和使用比较简单，Spring Security 上手复杂些；
+
+5、Shiro 依赖性低，不需要任何框架和容器，可以独立运行.Spring Security 依赖Spring容器；
+
+6、shiro 不仅仅可以使用在web中，它可以工作在任何应用环境中。在集群会话时Shiro最重要的一个好处或许就是它的会话是独立于容器的。
